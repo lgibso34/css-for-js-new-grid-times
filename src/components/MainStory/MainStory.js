@@ -1,14 +1,9 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-const MainStory = ({
-  id,
-  title,
-  image,
-  location,
-  abstract,
-  ...delegated
-}) => {
+import { QUERIES } from "../../constants";
+
+const MainStory = ({ id, title, image, location, abstract, ...delegated }) => {
   return (
     <Wrapper {...delegated}>
       <a href={`/story/${id}`}>
@@ -16,7 +11,8 @@ const MainStory = ({
         <Heading>{title}</Heading>
       </a>
       <Abstract>
-        <Location>{location}</Location> — {abstract}
+        <Location>{location}</Location> —{" "}
+        <AbstractText>{abstract}</AbstractText>
       </Abstract>
       <ReadMore href="/story">Continue Reading…</ReadMore>
     </Wrapper>
@@ -48,6 +44,22 @@ const Abstract = styled.p`
 
 const Location = styled.span`
   text-transform: uppercase;
+`;
+
+const AbstractText = styled.p`
+  --clamped-lines: 8;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--clamped-lines);
+  overflow: hidden;
+
+  @media ${QUERIES.tabletAndUp} {
+    -webkit-line-clamp: calc(var(--clamped-lines) * 2);
+  }
+
+  /* @media ${QUERIES.laptopAndUp} { */
+  /* -webkit-line-clamp: 8; */
+  /* } */
 `;
 
 const ReadMore = styled.a`
