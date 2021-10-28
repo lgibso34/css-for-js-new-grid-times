@@ -40,13 +40,3 @@ export const FAMILIES = {
     '"Helvetica Neue", Helvetica, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", sans-serif',
   logo: "Chomsky",
 };
-
-export function lineClamp(numberOfLines) {
-  return `
-  --clamped-lines: ${numberOfLines};
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--clamped-lines);
-  overflow: hidden;
-  `;
-}

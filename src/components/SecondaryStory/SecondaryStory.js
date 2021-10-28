@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { lineClamp } from "../../constants";
+import { QUERIES } from "../../constants";
+
 import ClampedParagraph from "../ClampedParagraph/ClampedParagraph";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
@@ -24,6 +25,14 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
+
+  @media ${QUERIES.tabletOnly} {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "heading"
+      "abstract";
+  }
 `;
 
 const Image = styled.img`

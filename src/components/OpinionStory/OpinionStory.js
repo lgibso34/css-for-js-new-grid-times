@@ -23,7 +23,7 @@ const Wrapper = styled.article`
   flex-direction: row-reverse;
   justify-content: space-between;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     display: block;
   }
 `;
@@ -37,7 +37,7 @@ const Avatar = styled.img`
 
   margin-left: 16px;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     margin-left: 0;
   }
 `;

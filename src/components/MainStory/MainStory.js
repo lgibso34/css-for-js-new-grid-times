@@ -57,9 +57,9 @@ const AbstractText = styled.p`
     -webkit-line-clamp: calc(var(--clamped-lines) * 2);
   }
 
-  /* @media ${QUERIES.laptopAndUp} { */
-  /* -webkit-line-clamp: 8; */
-  /* } */
+  @media ${QUERIES.laptopAndUp} {
+    -webkit-line-clamp: 10;
+  }
 `;
 
 const ReadMore = styled.a`
